@@ -13,7 +13,7 @@ module.exports = {
     default: {
       // A default environment is always required from which the other environments inherit the settings.
       // We can overwrite any test setting for each environment as needed.
-      launch_url: 'https://nightwatchjs.org',
+      // launch_url: 'https://nightwatchjs.org', // default launch url if not specified in a page object
       screenshots: {
         enabled: true,
         on_failure: true,
@@ -26,7 +26,7 @@ module.exports = {
       selenium: {
         // An object containing Selenium Server related configuration options. Selenium is only required when testing against a Grid setup or a cloud testing service
         start_process: true,
-        port: 4444,
+        port: 4445,
         server_path: require('selenium-server').path,
         log_path: './tests_output/seleniumLogs',
         cli_args: {
@@ -65,11 +65,19 @@ module.exports = {
     },
     edge: {
       extends: 'seleniumConfig',
-      selenium_port: 4444,
+      selenium_port: 4446,
       selenium_host: 'localhost',
       desiredCapabilities: {
         browserName: 'MicrosoftEdge',
         acceptSslCerts: true
+      }
+    },
+    local_docker:{
+      selenium_host: '127.0.0.1',
+      selenium_port: 4444,
+      start_process : false,
+      desiredCapabilities: {
+        browserName: 'firefox'
       }
     }
   }

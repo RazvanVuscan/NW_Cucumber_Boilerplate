@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "nightwatch": "nightwatch -c conf/nightwatch.conf.js --group demo -e firefox",
+    "docker": "nightwatch -c conf/nightwatch.conf.js --group demo -e local_docker",
     "cucumber": "mkdirp report && cucumber-js --require ./conf/cucumber.conf.js --require ./step-definitions --format node_modules/cucumber-pretty --format json:report/cucumber_report.json"
   },
   "keywords": [

@@ -18,9 +18,9 @@ module.exports = {
         // This is the actual runner for Cucumber tests and is required here, along with the desiredCapabilities.
         start_process: true,
         server_path: require('chromedriver').path,
-        port: 4444,
+        port: 4445,
         log_path: './tests_output/cucumberLogs',
-        cli_args: ['--port=4444']
+        cli_args: ['--port=4445']
       },
       desiredCapabilities: {
         browserName: 'chrome',
