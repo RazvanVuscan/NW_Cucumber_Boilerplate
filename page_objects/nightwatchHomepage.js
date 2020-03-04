@@ -21,12 +21,13 @@ module.exports = {
       abortOnFailure: false, // used to overwrite this setting when using waitForElement* commands
       suppressNotFoundErrors: true, // Some element commands like .click() or .getText() will throw a NoSuchElement error if the element cannot be located, causing the test to fail.
       elements: {
-        logo: '.logo-home'
+        logo: '.logo-home' // elements from this section are no longer recognized if you navigate to another page.
       }
     }
   },
   elements: {
     // rest of elements on the page
-    versionSelector: '#navbar-toprightindex .version-dropdown'
+    versionSelector: '#navbar-toprightindex .version-dropdown',
+    smallLogo: '.logo-small'
   }
 };

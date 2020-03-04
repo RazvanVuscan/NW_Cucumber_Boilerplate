@@ -27,7 +27,6 @@ module.exports = {
         chromeOptions: {
           args: [
             'start-maximized',
-            'disable-infobars',
             'disable-web-security',
             'safebrowsing-disable-download-protection'
           ]

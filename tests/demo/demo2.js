@@ -1,4 +1,6 @@
 module.exports = {
+  // vanilla Nightwatch example
+
   'Navigate to Google': client => {
     client
       .url('https://www.google.com')
