@@ -1,12 +1,15 @@
 module.exports = {
   // page object example
+
   'Navigate to Nightwatch and switch to oldest version': client => {
     const homepage = client.page.nightwatchHomepage();
     const topSection = homepage.section.topSection;
 
     homepage.navigate().waitForPageToLoad();
 
-    topSection.expect.element('@logo').to.be.visible;
+    topSection.expect.element('@logo').to.be.visible; // working with element from section example.
+
+    topSection.myMoveToLogo();
 
     homepage
       .click('@versionSelector')

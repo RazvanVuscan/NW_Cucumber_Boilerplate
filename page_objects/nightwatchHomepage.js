@@ -14,14 +14,28 @@ module.exports = {
   sections: {
     // use of sections in page objects
     topSection: {
-      selector: '#navigation',
-      index: 0, // use the first element in case there are multiple ones on the page,
-      timeout: 999, // used to overwrite the default timeout for when using waitForElement* commands or assertions
-      retryInterval: 30, // used to overwrite the default retry interval for when using waitForElement* commands or assertions
-      abortOnFailure: false, // used to overwrite this setting when using waitForElement* commands
-      suppressNotFoundErrors: true, // Some element commands like .click() or .getText() will throw a NoSuchElement error if the element cannot be located, causing the test to fail.
+      selector: '#navigation', // shortened selector
+      // index: 0, // use the first element in case there are multiple ones on the page,
+      // timeout: 999, // used to overwrite the default timeout for when using waitForElement* commands or assertions
+      // retryInterval: 30, // used to overwrite the default retry interval for when using waitForElement* commands or assertions
+      // abortOnFailure: false, // used to overwrite this setting when using waitForElement* commands
+      // suppressNotFoundErrors: true, // Some element commands like .click() or .getText() will throw a NoSuchElement error if the element cannot be located, causing the test to fail.
       elements: {
         logo: '.logo-home' // elements from this section are no longer recognized if you navigate to another page.
+      },
+      commands: [
+        {
+          myMoveToLogo: function() {
+            this.moveToElement('@logo', this.props.myLogoX, this.props.myLogoY);
+          }
+        }
+      ],
+      // function version (recommended)
+      props: function() {
+        return {
+          myLogoX: 10,
+          myLogoY: 10
+        };
       }
     }
   },

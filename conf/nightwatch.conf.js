@@ -3,7 +3,7 @@ module.exports = {
   globals_path: 'globals.js', // Globals file - KEEP THIS EXACT FORMATTING FOR THE FILE LOCATION FOR IT TO WORK!!!
   page_objects_path: './page_objects',
   test_workers: {
-    //run in parallel
+    //run in parallel. set to false for sequential
     enabled: true,
     workers: 'auto'
   },
@@ -72,10 +72,10 @@ module.exports = {
         acceptSslCerts: true
       }
     },
-    local_docker:{
+    local_docker: {
       selenium_host: '127.0.0.1',
       selenium_port: 4444,
-      start_process : false,
+      start_process: false,
       desiredCapabilities: {
         browserName: 'firefox'
       }
