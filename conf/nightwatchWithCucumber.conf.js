@@ -12,7 +12,7 @@ module.exports = {
       screenshots: {
         enabled: true,
         on_failure: true,
-        path: './screenshots/cucumberScreenshots'
+        path: './tests_output/screenshots/cucumberScreenshots'
       },
       webdriver: {
         // This is the actual runner for Cucumber tests and is required here, along with the desiredCapabilities.
