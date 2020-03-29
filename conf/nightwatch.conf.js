@@ -31,8 +31,7 @@ module.exports = {
         log_path: './tests_output/seleniumLogs',
         cli_args: {
           'webdriver.gecko.driver': require('geckodriver').path,
-          'webdriver.chrome.driver': require('chromedriver').path,
-          'webdriver.edge.driver': 'bin/MicrosoftWebDriver.exe'
+          'webdriver.chrome.driver': require('chromedriver').path
         }
       }
     },
@@ -42,8 +41,10 @@ module.exports = {
         browserName: 'chrome',
         acceptSslCerts: true,
         chromeOptions: {
+          w3c: false, //needed because otherwise unescaped characters error appears! (https://github.com/nightwatchjs/nightwatch/issues/2126)
           args: [
-            'start-maximized',
+            'start-fullscreen', //for Mac
+            'start-maximized', //for Windows
             'disable-infobars',
             'disable-web-security',
             'safebrowsing-disable-download-protection'
@@ -61,15 +62,6 @@ module.exports = {
         'moz:firefoxOptions': {
           // args: ['--headless', '--width=1800', '--height=1000']
         }
-      }
-    },
-    edge: {
-      extends: 'seleniumConfig',
-      selenium_port: 4446,
-      selenium_host: 'localhost',
-      desiredCapabilities: {
-        browserName: 'MicrosoftEdge',
-        acceptSslCerts: true
       }
     },
     local_docker: {

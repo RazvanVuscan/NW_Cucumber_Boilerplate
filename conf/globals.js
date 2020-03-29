@@ -52,7 +52,7 @@ module.exports = {
   // External after hook is ran at the very end of the tests run, after closing the Selenium session
   after: () => {
     console.log('END FROM GLOBALS!');
-  },
+  }
 
   // // This will be run before each test suite is started
   // beforeEach: (browser, done) => {

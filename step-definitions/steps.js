@@ -15,7 +15,10 @@ Then(/^The Google search form exists$/, async () => {
 
 When(/^I type "([^"]*)" in the search box$/, async input => {
   await client.setValue(
-    { selector: 'input[name="q"]', abortOnFailure: false }, //demonstrate abort on failure set to false -  test will not fail when this step breaks
+    {
+      selector: 'input[name="q"]',
+      abortOnFailure: false
+    }, //demonstrate abort on failure set to false -  test will not fail when this step breaks
     input
   );
 });

@@ -4,7 +4,7 @@
   "description": "Nightwatch playground",
   "main": "index.js",
   "scripts": {
-    "nightwatch": "nightwatch -c conf/nightwatch.conf.js --group demo -e firefox",
+    "nightwatch": "nightwatch -c conf/nightwatch.conf.js --group demo -e chrome",
     "docker": "nightwatch -c conf/nightwatch.conf.js --group demo -e local_docker",
     "cucumber": "mkdirp report && cucumber-js --require ./conf/cucumber.conf.js --require ./step-definitions --format node_modules/cucumber-pretty --format json:report/cucumber_report.json"
   },
@@ -17,7 +17,7 @@
   "author": "RazvanV",
   "license": "ISC",
   "devDependencies": {
-    "chromedriver": "^79.0.0",
+    "chromedriver": "^80.0.1",
     "cucumber": "^6.0.5",
     "cucumber-html-reporter": "^5.1.0",
     "cucumber-pretty": "^6.0.0",

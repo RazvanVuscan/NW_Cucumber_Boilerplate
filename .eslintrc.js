@@ -14,14 +14,17 @@ module.exports = {
     'no-underscore-dangle': 'off',
     'global-require': 'off',
     'class-methods-use-this': 'off',
-    'object-curly-newline': ['error', { multiline: true, consistent: true }],
+    'object-curly-newline': ['error', {
+      multiline: true,
+      consistent: true
+    }],
     'import/no-extraneous-dependencies': 'off',
     'import/extensions': 'off',
-    indent: ['error', 2, { SwitchCase: 1 }],
+    indent: ['error', 2, {SwitchCase: 1}],
     'linebreak-style': ['error', 'windows'],
     quotes: ['error', 'single'],
     semi: ['error', 'always'],
-    'prettier/prettier': ['error', { 'singleQuote': true }],
+    'prettier/prettier': ['error', {'singleQuote': true}],
     'prefer-template': 'error',
   },
 };

@@ -31,7 +31,11 @@ module.exports = {
             'safebrowsing-disable-download-protection'
           ]
         },
-        loggingPrefs: { driver: 'OFF', server: 'OFF', browser: 'OFF' } //set to INFO in order to enable
+        loggingPrefs: {
+          driver: 'OFF',
+          server: 'OFF',
+          browser: 'OFF'
+        } //set to INFO in order to enable
       }
     }
   }
