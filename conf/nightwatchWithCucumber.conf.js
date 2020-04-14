@@ -17,7 +17,7 @@ module.exports = {
       webdriver: {
         // This is the actual runner for Cucumber tests and is required here, along with the desiredCapabilities.
         start_process: true,
-        server_path: require('chromedriver').path,
+        server_path: require('selenium-server').path,
         port: 4445,
         log_path: './tests_output/cucumberLogs',
         cli_args: ['--port=4445']
@@ -36,6 +36,28 @@ module.exports = {
           server: 'OFF',
           browser: 'OFF'
         } //set to INFO in order to enable
+      }
+    },
+    chrome: {
+      webdriver: {
+        server_path: require('chromedriver').path
+      },
+      desiredCapabilities: {
+        browserName: 'chrome',
+        javascriptEnabled: true,
+        acceptSslCerts: true,
+        chromeOptions: {
+          args: ['disable-gpu']
+        }
+      }
+    },
+    firefox: {
+      webdriver: {
+        server_path: require('geckodriver').path
+      },
+      desiredCapabilities: {
+        browserName: 'firefox',
+        marionette: true
       }
     }
   }

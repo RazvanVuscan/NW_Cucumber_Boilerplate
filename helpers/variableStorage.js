@@ -1,5 +1,7 @@
 const variableStorage = {
-  pageTitle: ''
+  pageTitle: '',
+  searchQuery: '',
+  inputs: []
 };
 
 module.exports = variableStorage;

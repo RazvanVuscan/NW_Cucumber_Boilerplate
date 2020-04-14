@@ -13,7 +13,10 @@ const {
 setDefaultTimeout(60000);
 
 BeforeAll(async () => {
-  await startWebDriver({ configFile: './conf/nightwatchWithCucumber.conf.js' }); // config file
+  await startWebDriver({
+    configFile: './conf/nightwatchWithCucumber.conf.js',
+    env: 'chrome'
+  }); // config file and browser
   await createSession();
 });
 
